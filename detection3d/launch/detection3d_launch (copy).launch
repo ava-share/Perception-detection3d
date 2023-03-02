@@ -1,0 +1,19 @@
+<launch>
+
+    <!-- Node -->
+    
+    <arg name="poincloud_topic" default="/kitti/velo/pointcloud" />
+    <node name="detectionNode" pkg="detection3d" type="testP.py" output="screen" respawn="true">
+           <remap from="~poincloud_topic" to="$(arg poincloud_topic)"/>
+
+    </node>
+
+    <include file="$(find laneatt_ros)/launch/laneattLaunch.launch" />
+    <include file="$(find mmsegmentation_ros)/launch/mmsegmentor.launch" />
+    <include file="$(find line3d)/launch/line3dLaunch.launch" />
+    <include file="$(find seg3d)/launch/seg3dLaunch.launch" />
+
+
+</launch>
+
+
