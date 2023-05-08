@@ -1,0 +1,7 @@
+1. clone the repo and create the ros package.
+2. cd ~/catkin_ws/src/detection3d/src
+3. python testPypy
+
+messages are publishe as boundingBoxeArray with the name of /pp_bboxes
+
+
